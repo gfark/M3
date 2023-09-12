@@ -1,12 +1,13 @@
 import numpy as np 
 from turtle import * 
 
+print(1)
 
 ANGLES = {
 
     "red": 30,
     "blue": 45,
-    "yellow" : 90
+    "purple" : 130
 }
 
 
@@ -30,7 +31,7 @@ class drawSomething:
         """
         
         temp = np.random.choice (self.edges,p= [self.transition_matrix[current_edge][next_edge] for next_edge in self.edges])
-
+        
         return temp
     
     def get_next_angle(self, current_color="red"):
@@ -51,7 +52,7 @@ class drawSomething:
         """
 
         drawing_order = []
-        while len(self.line_order) < line_number:
+        while len(drawing_order) < line_number:
 
             next_color = self.get_next_color(current_color)
             current_angle = self.get_next_angle(current_color)
@@ -66,8 +67,8 @@ class drawSomething:
         print(sequence)
 
         
-        
         t = Turtle()
+
 
         for coord in sequence:
             t.color(coord[0])
@@ -78,20 +79,20 @@ class drawSomething:
     
 def main():
 
-    print("start")
     drawing = drawSomething({  
         
-        "red": {"A": 0.2, "B": 0.5, "C": .03},
-		"blue": {"A": 0.7, "B": 0.2, "C": .01},
-		"yellow": {"A": 0.3, "B": 0.4, "C": .03}
+        "red": {"red": 0.2, "blue": 0.5, "purple": .3},
+		"blue": {"red": 0.7, "blue": 0.2, "purple": .1},
+		"purple": {"red": 0.1, "blue": 0.3, "purple": .6}
 
     })
+
+    to_draw = drawing.drawing_sequence(current_color="red", line_number=100)
+    drawing.draw(to_draw)
     
-    new_drawing = drawing.drawing_sequence(current_color="red", line_number=30)
-    drawing.draw(new_drawing)
+    
 
 
-
-if "__name__" == "__main__":
+if __name__ == "__main__":
     main()
 
