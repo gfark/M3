@@ -1,14 +1,15 @@
 import numpy as np 
 from turtle import * 
 import turtle
+from random import *
 
-print(1)
 
 ANGLES = {
 
     "black": 45,
     "blue": 150,
-    "orange" : 130,
+    "orange" : 155,
+    "pink": 152.5
     
 }
 
@@ -70,6 +71,7 @@ class drawSomething:
     
         t = Turtle()
         turtle.Screen().bgcolor("black")
+        turtle.screensize(900, 700)
         turn = 0
         for coord in sequence:
             
@@ -83,31 +85,44 @@ class drawSomething:
                     t.left(coord[1])
                     turn = 0   
                 
-                t.forward(250)
-
+                if t.xcor() > 900 or t.xcor() < -900:
+                    x = randint(-900,900)
+                    y = randint(-900, 900)
+                    t.setpos(x,y)
+                
+                if t.ycor() > 700 or t.ycor() < -700:
+                    x = randint(-700,700)
+                    y = randint(-700, 700)
+                    t.setpos(x,y)
+                    
+                
 
             
+                t.forward(250)
+
             else:
                 t.right(coord[1]) 
                 t.forward(100)
 
-            
-                            
-    
 
-        
+            
+        turtle.Screen().exitonclick() 
+
+            
+                
     
 def main():
 
     drawing = drawSomething({  
         
-        "black": {"black": 0.1, "blue": 0.5, "orange": .4},
-		"blue": {"black": 0.1, "blue": 0.8, "orange": .1},
-		"orange": {"black": 0.2, "blue": 0.1, "orange": .7}
+        "black": {"black": 0.1, "blue": 0.4, "orange": 0.3, "pink": 0.2},
+		"blue": {"black": 0.1, "blue": 0.7, "orange": 0.1, "pink": 0.1},
+		"orange": {"black": 0.1, "blue": 0.3, "orange": 0.4, "pink": 0.2},
+        "pink": {"black": 0.1, "blue": 0.2, "orange": 0.2, "pink": 0.5}
 
     })
 
-    to_draw = drawing.drawing_sequence(current_color="blue", line_number=100)
+    to_draw = drawing.drawing_sequence(current_color="blue", line_number=200)
     drawing.draw(to_draw)
     
     
