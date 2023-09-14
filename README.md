@@ -7,13 +7,21 @@ In your repo, you should have a README file (readable by GitHub) that contains y
 In addition to describing how to set up and run the code, the documentation should include a title for your system and a description of your work.
 
 You should also:
+## Why is this meaningful?
+As a child, I spent my summers at a sleep away camp in Virginia Beach, VA. Orginially from Washington D.C., the stars in the sky were never as clear as they were than in VA Beach. At these camps I have made some very good friends, whomst I am still in touch with. One thing I will always remember doing, is star gazing on the beach with my friends and other campers who attended the camp. Then, attending Bowdoin college I have had similar experiences. I have gone to simpsons point or the costal studies center with the friends I've made while is college as well. It represents a happy, simple time for me and is the reason I wanted to create a piece of art that represented it.
 
-Describe how the system is personally meaningful to you (at least 1 paragraph).
-Explain how working on it genuinely challenged you as a computer scientist (at least 1 paragraph).
-How did you push yourself outside of your comfort zone?
-Why was this an important challenge for you?
-What are the next steps for you going forward?
-Include a discussion of whether you believe your system is creative (and why or why not).
-Make sure to credit your sources, including your colleagues if you sought their advice.
+## How was I challenged?
+This is the first project I have completed that has included a predictive component. Initally the lines were going every which way, and it looked like a collection of random lines. Initially I had trouble understanding how to use the probabilites to create the shapes that I wanted to create. I played around with different angles, and turning the turtle left and right, but that was not helping. I then realized, even though it may be based on probablities, I could skew the probabilities for the various colors and angles I wanted to create stars after. Once I determined the probabilities, the stars were still not turning out they way I had wanted. This challenged me by having to take a mathematical approach and determine the best angles to create shapes that geninunely looked like stars. Each color has a different corresponding angle. I had to find a relation between each angle that allowed stars to still look like stars, even if the color changed. I also ran into a issue where the turtle kept drawing off screen. This challeneged me to learn more about how to control the turtle and set boundaries.
+
+In my pervious computer sciences I have used java and c++. Last semester, I went abroad to amsterdam and the computer science courses I took there were using java as well. I have not used python since first semester freshman year in the course Programming with Data. This pushed me outside of my comfort zone by using a new language and learning in a short period of time. I never took Intro to Computer Science at Bowdoin. I have heard from others there multiple projects done using the turtle, but is something I had no had to do Programming with Data. This also pushed me out of my comfort zone because I have never had to code something to draw something.
+
+This was an important challenge for me because it tested multiple skills. I had to have the ability to learn a new language quickly, while applying new concepts, like the transition matrix. I also had to not only learn a new language, but learn the specific functions to use in order to draw, and to randomize different aspects of the drawing. By having to make edits, then analyze and see what could be done better, it allowed me to understand how transition matrixes worked, and how they could be used in real life programs, and how programs such as predictive texts work as well.
+
+Going forward, I want to challenge my self more by using more aspects of the python library. I now have a ground basis for python, which I had lacked before. I want to create more detailed drawings as well. I will also use the transition matrix tools I learned in future projects to make them more predictive.
+
+I believe my system is creative because it can create different stars, some that are more intricate and some that are not. If I had have more time, I would add a color randomization and more angles, that could maybe create comets and planets to make it more creative. There are various colors, that mimic what they sky truly does look like. Instead of just using a dot to create circles, I used the lines create a shape, in which I could not control. I believe this contributes the creativeness. Instead of having a color and angle loop for a specific amount of time, the system creates it's own stars and combines different lines and angles to create stars.
+
+Sources I used: geeks for geeks to learn more about the functions available to control the turtle.
+
 Examples
 Your examples subfolder should contain 5 example works that were generated by your code.  For instance, if you were the creator of Garkov, you would include 5 comic strips that had been generated by your code.
