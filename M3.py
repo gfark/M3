@@ -1,13 +1,15 @@
 import numpy as np 
 from turtle import * 
+import turtle
 
 print(1)
 
 ANGLES = {
 
-    "red": 30,
-    "blue": 45,
-    "purple" : 130
+    "black": 45,
+    "blue": 150,
+    "orange" : 130,
+    
 }
 
 
@@ -41,7 +43,7 @@ class drawSomething:
             current_color (string): color name
         """
 
-        print("step 2")
+    
         angle = ANGLES.get(current_color)
         return angle
 
@@ -64,16 +66,34 @@ class drawSomething:
 
 
     def draw(self, sequence):
-        print(sequence)
-
         
+    
         t = Turtle()
-
-
+        turtle.Screen().bgcolor("black")
+        turn = 0
         for coord in sequence:
+            
             t.color(coord[0])
-            t.right(coord[1])
-            t.forward(100)
+            
+            if coord[1] == 45:
+                if turn == 0:
+                    t.right(coord[1])
+                    turn = 1
+                else:
+                    t.left(coord[1])
+                    turn = 0   
+                
+                t.forward(250)
+
+
+            
+            else:
+                t.right(coord[1]) 
+                t.forward(100)
+
+            
+                            
+    
 
         
     
@@ -81,13 +101,13 @@ def main():
 
     drawing = drawSomething({  
         
-        "red": {"red": 0.2, "blue": 0.5, "purple": .3},
-		"blue": {"red": 0.7, "blue": 0.2, "purple": .1},
-		"purple": {"red": 0.1, "blue": 0.3, "purple": .6}
+        "black": {"black": 0.1, "blue": 0.5, "orange": .4},
+		"blue": {"black": 0.1, "blue": 0.8, "orange": .1},
+		"orange": {"black": 0.2, "blue": 0.1, "orange": .7}
 
     })
 
-    to_draw = drawing.drawing_sequence(current_color="red", line_number=100)
+    to_draw = drawing.drawing_sequence(current_color="blue", line_number=100)
     drawing.draw(to_draw)
     
     
