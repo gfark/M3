@@ -14,12 +14,9 @@ and number of lines, which results in the number stars drawn.
 It contains the class drawSomething, which takes in a transition matrix of colors,
 to predicts the next move. The colors have corresponding angles which 
 aid in creating different styles of stars.
-
-
-
 """
 
-
+#Global dictionary that corresponds various angles to the transition matrix labels 
 ANGLES = {
 
     "black": 45,
@@ -173,14 +170,15 @@ class drawSomething:
 
             else:
                 t.right(coord[1]) 
-                t.forward(100)
+                t.forward(50)
 
 
             
         turtle.Screen().exitonclick() 
 
-            
-                
+
+
+          
     
 def main():
 
@@ -194,7 +192,7 @@ def main():
     })
 
 
-    drawing.draw("yellow", 200)
+    drawing.draw("yellow", 300)
     
     
 
