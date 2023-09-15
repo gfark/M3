@@ -1,10 +1,17 @@
 # M3
 A Markov Distinction
+ #System Documentation
+ Class drawSomething:
 
+Functions:
+__init__ , get_next_color, get_next_angle, drawing_sequence, draw
 
-In your repo, you should have a README file (readable by GitHub) that contains your system documentation.  You might have noticed that GitHub encourages you to use Markdown (i.e., a README.md) file - this will work perfectly.
+Description: 
+Contains functions that draw and aid in drawing a night sky with stars
+based off a probabiltiy matrix
 
-In addition to describing how to set up and run the code, the documentation should include a title for your system and a description of your work.
+## How to start code:
+To start the code, create an object of drawSomething. Then call the draw() function on the drawSomething object created. draw() takes two variables. A color: black, pink, orange, and yellow. And a number: the amount of lines that should be used in the drawing. The video attached uses 300 lines, as a reference. A pop up page should appear and the drawing should start to create its self.
 
 You should also:
 ## Why is this meaningful?
